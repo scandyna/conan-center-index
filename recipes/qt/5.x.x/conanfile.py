@@ -5,6 +5,7 @@ from conan.tools.build import build_jobs, check_min_cppstd, cross_building
 from conan.tools.files import chdir, copy, get, load, replace_in_file, rm, rmdir, save, export_conandata_patches, apply_conandata_patches
 from conan.tools.microsoft import msvc_runtime_flag, is_msvc
 from conan.tools.scm import Version
+from conan.tools.env import VirtualBuildEnv
 from conans import tools, RunEnvironment
 from conans.model import Generator
 import configparser
@@ -142,7 +143,7 @@ class QtConan(ConanFile):
 
     no_copy_source = True
     short_paths = True
-    generators = "pkg_config"
+    generators = "pkg_config", "VirtualBuildEnv"
 
     @property
     def _settings_build(self):
