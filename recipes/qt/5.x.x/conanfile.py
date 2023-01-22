@@ -143,7 +143,7 @@ class QtConan(ConanFile):
 
     no_copy_source = True
     short_paths = True
-    generators = "pkg_config", "VirtualBuildEnv"
+    generators = "pkg_config", "VirtualRunEnv"
 
     @property
     def _settings_build(self):
