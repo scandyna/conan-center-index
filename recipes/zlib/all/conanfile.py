@@ -107,3 +107,5 @@ class ZlibConan(ConanFile):
 
         self.cpp_info.names["cmake_find_package"] = "ZLIB"
         self.cpp_info.names["cmake_find_package_multi"] = "ZLIB"
+        if self.settings.os == "Windows":
+          self.buildenv_info.prepend_path( "PATH", os.path.join(self.package_folder, "bin") )
